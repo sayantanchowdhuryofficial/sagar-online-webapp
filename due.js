@@ -1,15 +1,15 @@
-
 let dues=JSON.parse(localStorage.getItem("dues")) || []
 
 function addDue(){
 
 let name=document.getElementById("dname").value
 let date=document.getElementById("ddate").value
-let amount=parseInt(document.getElementById("damount").value)
+let amount=document.getElementById("damount").value
 
 dues.push({name,date,amount})
 
-saveDue()
+localStorage.setItem("dues",JSON.stringify(dues))
+
 renderDue()
 
 }
@@ -36,10 +36,6 @@ table.innerHTML+=`
 
 })
 
-}
-
-function saveDue(){
-localStorage.setItem("dues",JSON.stringify(dues))
 }
 
 renderDue()
