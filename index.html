@@ -5,95 +5,114 @@
 
 <title>SAGAR ONLINE</title>
 
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/style.css">
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
 </head>
 
 <body>
 
-<div class="sidebar">
+<div class="menu-btn" onclick="toggleMenu()">
+<div></div>
+<div></div>
+<div></div>
+</div>
 
-<h3>SAGAR ONLINE</h3>
+<div class="sidebar" id="sidebar">
+
+<h2>SAGAR ONLINE</h2>
 
 <ul>
 
-<li onclick="show('dashboard')">DASHBOARD</li>
-<li onclick="show('product')">PRODUCT DATE</li>
-<li onclick="show('billing')">BILLING</li>
-<li onclick="show('sale')">SALE REPORT</li>
-<li onclick="show('due')">DUE REGISTER</li>
+<li onclick="showPage('dashboard')">Dashboard</li>
+
+<li onclick="showPage('product')">Product Date</li>
+
+<li onclick="showPage('billing')">Billing</li>
+
+<li onclick="showPage('sale')">Sale Report</li>
+
+<li onclick="showPage('due')">Due Register</li>
 
 </ul>
 
 </div>
 
-<div class="main">
-
-<div id="welcome">
-
-<h1>WELCOME</h1>
-<p>Developed by CIPHERIUMX</p>
-
-</div>
+<div class="content">
 
 <div id="dashboard" class="page">
 
-<h2>Stock Dashboard</h2>
+<h1>Dashboard</h1>
 
-<button onclick="addProduct()">Add Product</button>
+<div class="cards">
 
-<table id="productTable">
+<div class="card">
+<h3>Total Products</h3>
+<p id="totalProducts">0</p>
+</div>
 
-<tr>
-<th>Product</th>
-<th>Quantity</th>
-<th>Category</th>
-<th>+ / -</th>
-<th>Low Alert</th>
-</tr>
+<div class="card">
+<h3>Low Stock</h3>
+<p id="lowStock">0</p>
+</div>
 
-</table>
+</div>
 
-<canvas id="chart"></canvas>
+<canvas id="stockChart"></canvas>
 
 </div>
 
 <div id="product" class="page">
-<h2>Product Date Entry</h2>
-Coming Soon
+
+<h1>Product Entry</h1>
+
+<input id="pname" placeholder="Product Name">
+
+<input id="pqty" placeholder="Quantity">
+
+<input id="pcat" placeholder="Category">
+
+<button onclick="addProduct()">Add Product</button>
+
+<table id="productTable"></table>
+
 </div>
 
 <div id="billing" class="page">
 
-<h2>Create Bill</h2>
+<h1>Billing</h1>
 
-<input id="pname" placeholder="Product Name">
-<input id="cname" placeholder="Customer Name">
-<input id="mobile" placeholder="Mobile">
-<input id="qty" placeholder="Quantity">
-<input id="money" placeholder="Money">
+<input id="bpname" placeholder="Product">
 
-<button onclick="createBill()">Generate Bill</button>
+<input id="bcustomer" placeholder="Customer Name">
+
+<input id="bmobile" placeholder="Mobile">
+
+<input id="bqty" placeholder="Quantity">
+
+<input id="bamount" placeholder="Amount">
+
+<button onclick="generateBill()">Generate Bill</button>
 
 </div>
 
 <div id="sale" class="page">
 
-<h2>SALE REPORT</h2>
+<h1>Sale Report</h1>
 
-Coming Soon
+<p>Coming Soon</p>
 
 </div>
 
 <div id="due" class="page">
 
-<h2>Due Register</h2>
+<h1>Due Register</h1>
 
 <input id="dname" placeholder="Customer Name">
+
 <input id="ddate" placeholder="Due Date">
+
 <input id="damount" placeholder="Amount">
 
 <button onclick="addDue()">Add Due</button>
@@ -104,10 +123,11 @@ Coming Soon
 
 </div>
 
-<script src="app.js"></script>
-<script src="dashboard.js"></script>
-<script src="billing.js"></script>
-<script src="due.js"></script>
+<script src="js/app.js"></script>
+<script src="js/dashboard.js"></script>
+<script src="js/billing.js"></script>
+<script src="js/due.js"></script>
 
 </body>
+
 </html>
