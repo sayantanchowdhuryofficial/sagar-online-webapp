@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SAGAR ONLINE WEB-APP</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="login-body">
+
+<div class="login-box">
+
+<h2>SAGAR ONLINE</h2>
+<p>Developed by CIPHERIUMX</p>
+
+<input id="username" placeholder="Username">
+<input id="password" type="password" placeholder="Password">
+
+<button onclick="login()">LOGIN</button>
+
+<p id="error"></p>
+
+</div>
+
+<script>
+
+function login(){
+
+let user=document.getElementById("username").value;
+let pass=document.getElementById("password").value;
+
+if(user=="CHURADITYA_MALODAS" && pass=="Sagar@#2025"){
+window.location="index.html"
+}else{
+document.getElementById("error").innerText="Wrong Login"
+}
+
+}
+
+</script>
+
+</body>
+</html>
