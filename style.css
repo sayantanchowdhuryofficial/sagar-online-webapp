@@ -6,6 +6,14 @@ color:white;
 display:flex;
 }
 
+.menu-btn{
+position:fixed;
+top:20px;
+left:20px;
+font-size:25px;
+cursor:pointer;
+}
+
 .sidebar{
 
 width:220px;
@@ -19,124 +27,80 @@ transition:0.3s;
 }
 
 .sidebar ul{
-
 list-style:none;
 padding:0;
-
 }
 
 .sidebar li{
-
 padding:12px;
 cursor:pointer;
-
 }
 
 .sidebar li:hover{
-
 background:#1f2937;
-
-}
-
-.menu-btn{
-
-position:fixed;
-top:20px;
-left:20px;
-cursor:pointer;
-
-}
-
-.menu-btn div{
-
-width:25px;
-height:3px;
-background:white;
-margin:5px;
-
 }
 
 .content{
-
 margin-left:60px;
 padding:40px;
 width:100%;
-
 }
 
 .page{
-
 display:none;
-
 }
 
 .cards{
-
 display:flex;
 gap:20px;
-
 }
 
 .card{
-
 background:#1e293b;
 padding:20px;
 border-radius:10px;
 width:200px;
 text-align:center;
-
 }
 
 table{
-
 width:100%;
 margin-top:20px;
 border-collapse:collapse;
-
 }
 
 td,th{
-
 border:1px solid #374151;
 padding:10px;
-
 }
 
 input{
-
 padding:10px;
 margin:5px;
 border:none;
 border-radius:5px;
-
 }
 
 button{
-
 padding:10px 15px;
 background:#6366f1;
 border:none;
 color:white;
 border-radius:5px;
 cursor:pointer;
-
 }
 
 .login-body{
-
 display:flex;
 justify-content:center;
 align-items:center;
 height:100vh;
 background:#020617;
-
 }
 
 .login-card{
-
 background:#111827;
 padding:40px;
 border-radius:10px;
 text-align:center;
-
 }
