@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>SAGAR ONLINE</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+<h3>SAGAR ONLINE</h3>
+
+<ul>
+
+<li onclick="show('dashboard')">DASHBOARD</li>
+<li onclick="show('product')">PRODUCT DATE</li>
+<li onclick="show('billing')">BILLING</li>
+<li onclick="show('sale')">SALE REPORT</li>
+<li onclick="show('due')">DUE REGISTER</li>
+
+</ul>
+
+</div>
+
+<div class="main">
+
+<div id="welcome">
+
+<h1>WELCOME</h1>
+<p>Developed by CIPHERIUMX</p>
+
+</div>
+
+<div id="dashboard" class="page">
+
+<h2>Stock Dashboard</h2>
+
+<button onclick="addProduct()">Add Product</button>
+
+<table id="productTable">
+
+<tr>
+<th>Product</th>
+<th>Quantity</th>
+<th>Category</th>
+<th>+ / -</th>
+<th>Low Alert</th>
+</tr>
+
+</table>
+
+<canvas id="chart"></canvas>
+
+</div>
+
+<div id="product" class="page">
+<h2>Product Date Entry</h2>
+Coming Soon
+</div>
+
+<div id="billing" class="page">
+
+<h2>Create Bill</h2>
+
+<input id="pname" placeholder="Product Name">
+<input id="cname" placeholder="Customer Name">
+<input id="mobile" placeholder="Mobile">
+<input id="qty" placeholder="Quantity">
+<input id="money" placeholder="Money">
+
+<button onclick="createBill()">Generate Bill</button>
+
+</div>
+
+<div id="sale" class="page">
+
+<h2>SALE REPORT</h2>
+
+Coming Soon
+
+</div>
+
+<div id="due" class="page">
+
+<h2>Due Register</h2>
+
+<input id="dname" placeholder="Customer Name">
+<input id="ddate" placeholder="Due Date">
+<input id="damount" placeholder="Amount">
+
+<button onclick="addDue()">Add Due</button>
+
+<table id="dueTable"></table>
+
+</div>
+
+</div>
+
+<script src="app.js"></script>
+<script src="dashboard.js"></script>
+<script src="billing.js"></script>
+<script src="due.js"></script>
+
+</body>
+</html>
