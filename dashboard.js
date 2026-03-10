@@ -1,81 +1,47 @@
-
-let products=JSON.parse(localStorage.getItem("products")) || [];
+let products=JSON.parse(localStorage.getItem("products")) || []
 
 function addProduct(){
 
-let name=prompt("Product Name");
-let qty=prompt("Quantity");
-let cat=prompt("Category");
+let name=document.getElementById("pname").value
+let qty=parseInt(document.getElementById("pqty").value)
+let cat=document.getElementById("pcat").value
 
-products.push({
-name:name,
-qty:parseInt(qty),
-cat:cat,
-low:5
-});
+products.push({name,qty,cat})
 
-saveProducts();
-render();
+saveProducts()
+
+renderProducts()
 
 }
 
-function render(){
+function renderProducts(){
 
-let table=document.getElementById("productTable");
+let table=document.getElementById("productTable")
 
-table.innerHTML=`
-<tr>
-<th>Product</th>
-<th>Quantity</th>
-<th>Category</th>
-<th>Action</th>
-<th>Low Alert</th>
-</tr>
-`;
+table.innerHTML="<tr><th>Name</th><th>Qty</th><th>Category</th></tr>"
 
-products.forEach((p,i)=>{
-
-let alert=p.qty<=p.low?"style='background:red;color:white'":"";
+products.forEach(p=>{
 
 table.innerHTML+=`
 
-<tr ${alert}>
+<tr>
 
 <td>${p.name}</td>
 <td>${p.qty}</td>
 <td>${p.cat}</td>
 
-<td>
-
-<button onclick="add(${i})">+</button>
-<button onclick="minus(${i})">-</button>
-
-</td>
-
-<td>${p.low}</td>
-
 </tr>
 
-`;
+`
 
-});
+})
 
-}
-
-function add(i){
-products[i].qty++;
-saveProducts();
-render();
-}
-
-function minus(i){
-products[i].qty--;
-saveProducts();
-render();
 }
 
 function saveProducts(){
-localStorage.setItem("products",JSON.stringify(products));
+
+localStorage.setItem("products",JSON.stringify(products))
+
 }
 
-render()
+renderProducts()
