@@ -8,16 +8,13 @@
 <link rel="stylesheet" href="css/style.css">
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
 </head>
 
 <body>
 
-<div class="menu-btn" onclick="toggleMenu()">
-<div></div>
-<div></div>
-<div></div>
-</div>
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
 
 <div class="sidebar" id="sidebar">
 
@@ -25,21 +22,19 @@
 
 <ul>
 
-<li onclick="showPage('dashboard')">Dashboard</li>
-
-<li onclick="showPage('product')">Product Date</li>
-
-<li onclick="showPage('billing')">Billing</li>
-
-<li onclick="showPage('sale')">Sale Report</li>
-
-<li onclick="showPage('due')">Due Register</li>
+<li onclick="openPage('dashboard')">Dashboard</li>
+<li onclick="openPage('stock')">Product Stock</li>
+<li onclick="openPage('billing')">Billing</li>
+<li onclick="openPage('report')">Sale Report</li>
+<li onclick="openPage('due')">Due Register</li>
 
 </ul>
 
 </div>
 
 <div class="content">
+
+<!-- DASHBOARD -->
 
 <div id="dashboard" class="page">
 
@@ -63,15 +58,16 @@
 
 </div>
 
-<div id="product" class="page">
+<!-- STOCK -->
 
-<h1>Product Entry</h1>
+<div id="stock" class="page">
+
+<h1>Stock Manager</h1>
 
 <input id="pname" placeholder="Product Name">
-
 <input id="pqty" placeholder="Quantity">
-
 <input id="pcat" placeholder="Category">
+<input id="plow" placeholder="Low Alert Count">
 
 <button onclick="addProduct()">Add Product</button>
 
@@ -79,40 +75,39 @@
 
 </div>
 
+<!-- BILLING -->
+
 <div id="billing" class="page">
 
 <h1>Billing</h1>
 
-<input id="bpname" placeholder="Product">
-
+<input id="bproduct" placeholder="Product Name">
 <input id="bcustomer" placeholder="Customer Name">
-
 <input id="bmobile" placeholder="Mobile">
-
 <input id="bqty" placeholder="Quantity">
+<input id="bprice" placeholder="Total Amount">
 
-<input id="bamount" placeholder="Amount">
-
-<button onclick="generateBill()">Generate Bill</button>
+<button onclick="createBill()">Generate Bill</button>
 
 </div>
 
-<div id="sale" class="page">
+<!-- REPORT -->
+
+<div id="report" class="page">
 
 <h1>Sale Report</h1>
-
 <p>Coming Soon</p>
 
 </div>
+
+<!-- DUE -->
 
 <div id="due" class="page">
 
 <h1>Due Register</h1>
 
 <input id="dname" placeholder="Customer Name">
-
 <input id="ddate" placeholder="Due Date">
-
 <input id="damount" placeholder="Amount">
 
 <button onclick="addDue()">Add Due</button>
@@ -124,10 +119,9 @@
 </div>
 
 <script src="js/app.js"></script>
-<script src="js/dashboard.js"></script>
+<script src="js/stock.js"></script>
 <script src="js/billing.js"></script>
 <script src="js/due.js"></script>
 
 </body>
-
 </html>
