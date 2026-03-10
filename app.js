@@ -2,19 +2,15 @@ function toggleMenu(){
 
 let s=document.getElementById("sidebar")
 
-if(s.style.left=="0px"){
-
+if(s.style.left==="0px"){
 s.style.left="-240px"
-
 }else{
-
 s.style.left="0px"
-
 }
 
 }
 
-function showPage(id){
+function openPage(id){
 
 let pages=document.querySelectorAll(".page")
 
