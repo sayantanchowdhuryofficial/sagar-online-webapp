@@ -1,10 +1,25 @@
+function toggleMenu(){
 
-function show(page){
+let s=document.getElementById("sidebar")
 
-let pages=document.querySelectorAll(".page");
+if(s.style.left=="0px"){
 
-pages.forEach(p=>p.style.display="none");
+s.style.left="-240px"
 
-document.getElementById(page).style.display="block";
+}else{
+
+s.style.left="0px"
+
+}
+
+}
+
+function showPage(id){
+
+let pages=document.querySelectorAll(".page")
+
+pages.forEach(p=>p.style.display="none")
+
+document.getElementById(id).style.display="block"
 
 }
