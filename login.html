@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>SAGAR ONLINE WEB-APP</title>
-<link rel="stylesheet" href="style.css">
+
+<title>SAGAR ONLINE</title>
+
+<link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body class="login-body">
 
-<div class="login-box">
+<div class="login-card">
 
-<h2>SAGAR ONLINE</h2>
-<p>Developed by CIPHERIUMX</p>
+<h1>SAGAR ONLINE</h1>
 
-<input id="username" placeholder="Username">
-<input id="password" type="password" placeholder="Password">
+<p>Developed by <b>CIPHERIUMX</b></p>
+
+<input id="user" placeholder="Username">
+
+<input id="pass" type="password" placeholder="Password">
 
 <button onclick="login()">LOGIN</button>
 
@@ -25,13 +30,17 @@
 
 function login(){
 
-let user=document.getElementById("username").value;
-let pass=document.getElementById("password").value;
+let u=document.getElementById("user").value
+let p=document.getElementById("pass").value
 
-if(user=="CHURADITYA_MALODAS" && pass=="Sagar@#2025"){
+if(u=="CHURADITYA_MALODAS" && p=="Sagar@#2025"){
+
 window.location="index.html"
+
 }else{
-document.getElementById("error").innerText="Wrong Login"
+
+document.getElementById("error").innerText="Invalid Login"
+
 }
 
 }
